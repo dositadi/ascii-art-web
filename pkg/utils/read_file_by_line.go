@@ -1,0 +1,44 @@
+package utils
+
+import (
+	m "ascii-web/pkg/models"
+	"bufio"
+	"os"
+)
+
+func ReadFileByLine(startLine int, filepath string) ([]string, *m.Error) {
+	file, err := os.Open(filepath)
+	if err != nil {
+		return nil, &m.Error{
+			Error:  SERVER_ERR,
+			Detail: SERVER_ERR_DETAIL,
+		}
+	}
+
+	defer file.Close()
+
+	var asciiArt []string
+
+	scanner := bufio.NewScanner(file)
+
+	currentLine := 1
+
+	stopLine := startLine + 8
+
+	for scanner.Scan() {
+		if currentLine >= startLine && currentLine <= stopLine {
+			asciiArt = append(asciiArt, scanner.Text())
+		} else if currentLine > stopLine {
+			break
+		}
+		currentLine++
+	}
+
+	if err := scanner.Err(); err != nil {
+		return nil, &m.Error{
+			Error:  SERVER_ERR,
+			Detail: SERVER_ERR_DETAIL,
+		}
+	}
+	return asciiArt, nil
+}
