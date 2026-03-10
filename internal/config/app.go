@@ -29,6 +29,7 @@ func (a *App) InitializeServer() {
 
 func (a *App) Run() {
 	a.InitializeServer()
+
 	server := http.Server{
 		Addr:         ":8081",
 		Handler:      a.Router,

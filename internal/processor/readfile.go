@@ -1,17 +1,18 @@
-package utils
+package processor
 
 import (
 	m "ascii-web/pkg/models"
+	h "ascii-web/pkg/utils"
 	"bufio"
 	"os"
 )
 
-func ReadFileByLine(startLine int, filepath string) ([]string, *m.Error) {
+func (p *Processor) ReadFileByLine(startLine int, filepath string) ([]string, *m.Error) {
 	file, err := os.Open(filepath)
 	if err != nil {
 		return nil, &m.Error{
-			Error:  SERVER_ERR,
-			Detail: SERVER_ERR_DETAIL,
+			Error:  h.SERVER_ERR + "1",
+			Detail: h.SERVER_ERR_DETAIL,
 		}
 	}
 
@@ -36,8 +37,8 @@ func ReadFileByLine(startLine int, filepath string) ([]string, *m.Error) {
 
 	if err := scanner.Err(); err != nil {
 		return nil, &m.Error{
-			Error:  SERVER_ERR,
-			Detail: SERVER_ERR_DETAIL,
+			Error:  h.SERVER_ERR + "2",
+			Detail: err.Error(),
 		}
 	}
 	return asciiArt, nil

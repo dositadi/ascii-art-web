@@ -15,7 +15,10 @@ func (p *Processor) Get() *m.Error {
 }
 
 func (p *Processor) Post(request m.Ascii) (m.Response, *m.Error) {
-	response := p.ProcessTextIntoAscii(request)
+	response, err := p.ProcessTextIntoAscii(request)
+	if err != nil {
+		return m.Response{}, err
+	}
 
 	output := m.Response{
 		Reponse: response,

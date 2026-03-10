@@ -2,7 +2,7 @@ package handlers
 
 import (
 	m "ascii-web/pkg/models"
-	"log"
+	"fmt"
 	"net/http"
 )
 
@@ -45,7 +45,10 @@ func (s *AsciiSketch) PostHandler(w http.ResponseWriter, r *http.Request) {
 
 	response, err := s.AsciiSketcher.Post(request)
 	if err != nil {
-		log.Printf(err.Error, ": ", err.Error)
+		errMessage := fmt.Sprintf("Error: %s\nDetail: %s\n", err.Error, err.Detail)
+		w.WriteHeader(http.StatusInternalServerError)
+		w.Header().Set("Content-Type", "application/json")
+		w.Write([]byte(errMessage))
 	}
 
 	w.WriteHeader(http.StatusOK)

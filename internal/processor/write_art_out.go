@@ -1,15 +1,18 @@
-package utils
+package processor
 
 import (
-	"fmt"
+	m "ascii-web/pkg/models"
+	h "ascii-web/pkg/utils"
 	"slices"
 	"strings"
 )
 
-func PrintArtOut(maxStore [][][]string) string {
+func WriteArtOut(maxStore [][][]string) (string, *m.Error) {
 	if maxStore == nil {
-		fmt.Println("The Max Store is empty.")
-		return ""
+		return "", &m.Error{
+			Error:  h.SERVER_ERR + "3",
+			Detail: h.SERVER_ERR_DETAIL,
+		}
 	}
 
 	var output strings.Builder
@@ -24,7 +27,7 @@ func PrintArtOut(maxStore [][][]string) string {
 		newLineChar = append(newLineChar, []string{"\n"})
 
 		if slices.Compare(currentLines[0], newLineChar[0]) == 0 {
-			fmt.Println()
+			output.WriteString("\n")
 			continue
 		}
 
@@ -40,5 +43,5 @@ func PrintArtOut(maxStore [][][]string) string {
 			output.WriteString(combinedString)
 		}
 	}
-	return output.String()
+	return output.String(), nil
 }
