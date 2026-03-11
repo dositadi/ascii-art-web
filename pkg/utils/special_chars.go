@@ -1,5 +1,6 @@
 package utils
 
+// the startline storage for special characters
 var SpecialCharactersArt map[rune]int = map[rune]int{
 	' ':  2,
 	'!':  11,

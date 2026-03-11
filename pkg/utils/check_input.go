@@ -1,21 +1,19 @@
 package utils
 
 import (
+	"bufio"
 	"strings"
 )
 
+// This function checks if an empty strings occurs in the input and slits
 func CheckIfNewlineAndSplit(input string) []string {
 	var output []string
-	containsNewLine := false
 
-	if strings.Contains(input, "\\n") {
-		containsNewLine = true
-	}
+	scanner := bufio.NewScanner(strings.NewReader(input))
 
-	if containsNewLine {
-		output = strings.Split(input, "\\n")
-	} else {
-		output = append(output, input)
+	for scanner.Scan() {
+		lines := scanner.Text()
+		output = append(output, lines)
 	}
 	return output
 }

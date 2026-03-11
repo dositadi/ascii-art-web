@@ -5,6 +5,7 @@ import (
 	h "ascii-web/pkg/utils"
 )
 
+// This specifies the banner the user choose
 func (p *Processor) ProcessTextIntoAscii(input m.Ascii) (string, *m.Error) {
 	text := input.Text
 	banner := input.Banner
@@ -39,6 +40,6 @@ func (p *Processor) ProcessTextIntoAscii(input m.Ascii) (string, *m.Error) {
 	if err2 != nil {
 		return "", err2
 	}
-
+	
 	return outPut, nil
 }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <header>
+        <center>
+            <h1>
+                {{.Title}}
+            </h1>
+        </center>
+    </header>
+
+    <nav>
+        <center>
+            <a href={{.HomeUrl}}>Home</a>
+        </center>
+    </nav>
+
+    <main>
+        <article style="justify-self: center;">
+            <section>
+                <p>
+                    {{.Input}}
+                </p>
+            </section>
+            <section>
+               <pre>{{.Response}}</pre>
+            </section>
+        </article>
+    </main>
+</body>
+</html>

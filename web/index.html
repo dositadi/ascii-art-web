@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}}</title>
+</head>
+<body>
+    <header>
+        <center>
+            <h1>
+                {{.Title}}
+            </h1>
+        </center>
+    </header>
+
+    <nav>
+        <center>
+            <a href={{.HomeUrl}}>Home</a>
+        </center>
+    </nav>
+
+    <main>
+        <center>
+            <h2>
+                What will you like to draw?
+            </h2>
+        </center>
+            <article style="align-self: center; margin: auto; justify-self: center; border-style: solid; border-color: antiquewhite; 
+            border-radius: 50px; padding: 1rem; ">
+                <form action={{.PostUrl}} method="POST" style="justify-content: space-between; padding-bottom: 6px;">
+                    <section>
+                        <textarea name="text" id="text" cols="30" required rows="5" style="border-radius: 8px;">Enter text here</textarea>
+                    </section>
+
+                    <section>
+                        <label for="banner">Choose your favorite Banner</label>
+                    </section>
+                    <section>
+                        <input type="radio" required name="banner" id="standard" value="standard">
+                        <label for="standard">Standard</label>
+                    </section>
+                    <section>
+                        <input type="radio" required name="banner" id="shadow" value="shadow">
+                        <label for="shadow">Shadow</label>
+                    </section>
+                    <section>
+                        <input type="radio" required name="banner" id="thinkertoy" value="thinkertoy">
+                        <label for="thinkertoy">Thinkertoy</label>
+                    </section>
+                    <section>
+                        <button type="submit" style="background-color: antiquewhite; border-radius: 50px;">Submit</button>
+                    </section>
+                </form>
+
+                <section style="position: absolute;justify-self: end;padding-top: 10px;">
+                    <p>
+                       ©️ Powerered by Ola, John and Divine
+                    </p>
+                </section>
+            </article>
+        </center>
+    </main>
+</body>
+</html>

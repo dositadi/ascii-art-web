@@ -7,10 +7,11 @@ import (
 	"strings"
 )
 
+// This function iterates through the maxstore and concatenates its contents into one string
 func WriteArtOut(maxStore [][][]string) (string, *m.Error) {
 	if maxStore == nil {
 		return "", &m.Error{
-			Error:  h.SERVER_ERR + "3",
+			Error:  h.SERVER_ERR,
 			Detail: h.SERVER_ERR_DETAIL,
 		}
 	}

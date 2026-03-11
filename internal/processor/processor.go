@@ -4,25 +4,20 @@ import (
 	m "ascii-web/pkg/models"
 )
 
+// the processor struct
 type Processor struct{}
 
+// The contructor to create a new processor
 func CreateNewProcessor() *Processor {
 	return &Processor{}
 }
 
-func (p *Processor) Get() *m.Error {
-	return nil
-}
-
-func (p *Processor) Post(request m.Ascii) (m.Response, *m.Error) {
+// The implementation of the Post method from the ascii art interface 
+func (p *Processor) Post(request m.Ascii) (string, *m.Error) {
 	response, err := p.ProcessTextIntoAscii(request)
 	if err != nil {
-		return m.Response{}, err
+		return "", err
 	}
 
-	output := m.Response{
-		Reponse: response,
-	}
-
-	return output, nil
+	return response, nil
 }

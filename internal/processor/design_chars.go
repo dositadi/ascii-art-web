@@ -7,6 +7,7 @@ import (
 	"unicode"
 )
 
+// this function constructs the ascii character representation
 func (p *Processor) DesignAllCharacters(inputs []string, filepath string) ([][][]string, *m.Error) {
 	var maxStore [][][]string
 

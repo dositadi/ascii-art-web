@@ -1,5 +1,6 @@
 package utils
 
+// The startline storage for lower case characters
 var LowerCaseAlphabetsArt map[rune]int = map[rune]int{
 	'a': 587,
 	'b': 596,

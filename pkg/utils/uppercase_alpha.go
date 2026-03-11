@@ -1,5 +1,6 @@
 package utils
 
+// the startline storage for upper case alphabets
 var UpperCaseAlphabetsArt map[rune]int = map[rune]int{
 	'A': 299,
 	'B': 308,

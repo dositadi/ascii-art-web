@@ -1,5 +1,6 @@
 package utils
 
+// The startline for numbers storage
 var NumbersArt map[rune]int = map[rune]int{
 	'0': 146,
 	'1': 155,

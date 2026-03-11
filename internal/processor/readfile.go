@@ -7,11 +7,12 @@ import (
 	"os"
 )
 
+// The function reads the file to get the ascii representation of the input
 func (p *Processor) ReadFileByLine(startLine int, filepath string) ([]string, *m.Error) {
 	file, err := os.Open(filepath)
 	if err != nil {
 		return nil, &m.Error{
-			Error:  h.SERVER_ERR + "1",
+			Error:  h.SERVER_ERR,
 			Detail: h.SERVER_ERR_DETAIL,
 		}
 	}
@@ -37,7 +38,7 @@ func (p *Processor) ReadFileByLine(startLine int, filepath string) ([]string, *m
 
 	if err := scanner.Err(); err != nil {
 		return nil, &m.Error{
-			Error:  h.SERVER_ERR + "2",
+			Error:  h.SERVER_ERR,
 			Detail: err.Error(),
 		}
 	}
