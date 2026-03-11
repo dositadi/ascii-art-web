@@ -49,7 +49,7 @@ cd ascii-art-web
 Execute the following command to start the server:
 
 ```bash
-go run main.go
+go run cmd/main.go
 ```
 
 The server will start on `http://localhost:8081`.
