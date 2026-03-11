@@ -1,7 +1,7 @@
 ![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
 ![Go Version](https://img.shields.io/badge/Go-1.22+-00ADD8?style=flat&logo=go)
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/dositadi/ascii-web)](https://goreportcard.com/report/github.com/dositadi/ascii-art)
+[![Go Report Card](https://goreportcard.com/badge/github.com/dositadi/ascii-art-web)](https://goreportcard.com/report/github.com/dositadi/ascii-art)
 
 # ASCII-Art Web
 A robust Go-based web application that transforms user-inputted text into stylized ASCII art using various banners. This project demonstrates a clear separation of concerns, utilizing Go interfaces for high modularity and testability.
